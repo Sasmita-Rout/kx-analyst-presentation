@@ -652,10 +652,18 @@ function initScreenshots() {
   frames.forEach((frame, index) => {
     const key = `kx_screenshot_${index}`;
     
-    // Restore from localStorage
+    // Restore from localStorage or use default
     const saved = localStorage.getItem(key);
+    const defaultImages = [
+      "images/editor.png",
+      "images/query-in-progress.png",
+      "images/graph.png"
+    ];
+    const defaultImg = defaultImages[index];
     if (saved) {
       frame.innerHTML = `<img src="${saved}" style="width: 100%; height: 100%; object-fit: cover;" alt="Screenshot">`;
+    } else if (defaultImg) {
+      frame.innerHTML = `<img src="${defaultImg}" style="width: 100%; height: 100%; object-fit: cover;" alt="Screenshot">`;
     }
     
     // Drag and drop handlers
@@ -737,6 +745,19 @@ document.addEventListener('fullscreenchange', () => {
   }
 });
 
+
+// Default images map for tool modals
+const DEFAULT_TOOL_IMAGES = {
+  editor: "images/editor.png",
+  inspector: "images/visual inspector.png",
+  importer: "images/importer.png",
+  exporter: "images/table-exporter.png",
+  transformer: "images/table-transformer.png",
+  git: "images/git.png",
+  qcumber: "images/axqcumber.png",
+  profiler: "images/profiler.png"
+};
+
 // TOOL DETAILS DICTIONARY
 const TOOL_DETAILS = {
   editor: {
@@ -788,13 +809,7 @@ const TOOL_DETAILS = {
     desc: "An automated BDD (Behavior-Driven Development) testing framework specifically tailored for q code. Allows writing test specifications in natural language and executing automated test suites against analytics functions.",
     value: "Prevents code regressions, enforces quality standards, and builds confidence for Managing Directors when releasing critical algorithmic updates to production."
   },
-  debugger: {
-    name: "Interactive Debugger",
-    icon: "🐛",
-    badge: "Developer Tool",
-    desc: "Visual step-by-step debugger for q logic. Enables developers to set breakpoints, step into/over functions, inspect stack callframes, monitor variable values, and evaluate expressions at runtime.",
-    value: "Reduces issue resolution time by over 70%. Developers no longer need to insert manual print statements to trace complex trading analytics bugs."
-  },
+
   profiler: {
     name: "Performance Profiler",
     icon: "⚡",
@@ -802,13 +817,7 @@ const TOOL_DETAILS = {
     desc: "Real-time execution profiler that analyzes q code down to line-by-line timing, function call counts, and memory allocations during heavy tick volume runs.",
     value: "Pinpoints performance bottlenecks instantly, ensuring trading analytics run at sub-millisecond speeds even during extreme market volatility."
   },
-  differ: {
-    name: "Code Differ",
-    icon: "🔍",
-    badge: "Code Review",
-    desc: "Visual side-by-side and inline difference viewer for comparing module versions, workspace states, or Git commits.",
-    value: "Accelerates peer code reviews and prevents accidental breaking changes by highlighting exact modifications between workspace branches."
-  }
+
 };
 
 // TOOL MINI-ANIMATIONS — "See It In Action" per tool
@@ -948,15 +957,7 @@ const TOOL_ANIMATIONS = {
     toolAnimTimers.push(setTimeout(() => q3.innerHTML = '<span class="ta-badge green">✓ pass</span>', 1400));
     toolAnimTimers.push(setTimeout(() => qsum.classList.add('in'), 1700));
   },
-  debugger: (stage) => {
-    stage.innerHTML = `
-      <div class="ta-mono">f:{[x;y] <span style="color:#EF4444;">●</span> x+y}</div>
-      <div class="ta-fadein" id="ta-paused" style="font-size:0.75rem;"><span class="ta-badge amber">⏸ Paused at breakpoint</span></div>
-      <div class="ta-fadein" id="ta-vars" style="font-size:0.72rem;color:#9CA3AF;font-family:'Courier New',monospace;">x = 10 &nbsp; y = 20</div>
-    `;
-    toolAnimTimers.push(setTimeout(() => stage.querySelector('#ta-paused').classList.add('in'), 500));
-    toolAnimTimers.push(setTimeout(() => stage.querySelector('#ta-vars').classList.add('in'), 950));
-  },
+
   profiler: (stage) => {
     stage.innerHTML = `
       <div class="ta-bar-track">
@@ -973,15 +974,7 @@ const TOOL_ANIMATIONS = {
     });
     toolAnimTimers.push(setTimeout(() => stage.querySelector('#ta-warn').classList.add('in'), 1400));
   },
-  differ: (stage) => {
-    stage.innerHTML = `
-      <div class="ta-mono ta-row-appear" id="ta-d1"><span class="ta-diff-remove">- return x+y;</span></div>
-      <div class="ta-mono ta-row-appear" id="ta-d2"><span class="ta-diff-add">+ return x+y+z;</span></div>
-      <div class="ta-fadein" id="ta-dsum" style="font-size:0.72rem;color:#9CA3AF;margin-top:4px;">1 line changed · reviewed before merge</div>
-    `;
-    taReveal([stage.querySelector('#ta-d1'), stage.querySelector('#ta-d2')], 300, 400);
-    toolAnimTimers.push(setTimeout(() => stage.querySelector('#ta-dsum').classList.add('in'), 1100));
-  }
+
 };
 
 function playToolAnimation(toolId) {
@@ -1024,10 +1017,13 @@ function initToolModals() {
     toolIconEl.textContent = details.icon;
     toolBadgeEl.textContent = details.badge;
 
-    // Load tool screenshot if saved
+    // Load tool screenshot if saved or default exists
     const savedImg = localStorage.getItem(`kx_tool_screenshot_${toolId}`);
+    const defaultImg = DEFAULT_TOOL_IMAGES[toolId];
     if (savedImg) {
       toolFrameEl.innerHTML = `<img src="${savedImg}" style="width:100%;height:100%;object-fit:cover;" alt="${details.name}">`;
+    } else if (defaultImg) {
+      toolFrameEl.innerHTML = `<img src="${defaultImg}" style="width:100%;height:100%;object-fit:cover;" alt="${details.name}">`;
     } else {
       toolFrameEl.innerHTML = `
         <div class="tool-screenshot-placeholder">
