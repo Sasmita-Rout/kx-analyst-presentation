@@ -28,7 +28,6 @@ const SPEAKER_NOTES = [
   "1.5 min. This is a good 'scale of work' slide — 50+ repos is a strong number to say out loud even without much elaboration on each step.",
   "2 min. Card 4 (local build research) is not a failure — frame it as a properly-scoped investigation that surfaced a real infrastructure gap, not being stuck. The mixed statuses here are intentional honest reporting.",
   "Transition slide only — no content to present, just open the floor."
-];to present, just open the floor."
 ];
 
 let animationTimers = [];
