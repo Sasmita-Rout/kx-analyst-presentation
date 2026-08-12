@@ -632,8 +632,10 @@
           </div>
           <div class="ticket-date-line">Jun 9 – Jun 15</div>
           <ul class="ticket-list">
-            <li>Test and source file paths containing spaces previously broke the tooling</li>
-            <li>Fixed path handling so spaces no longer cause failures</li>
+            <li>The testing and source file tooling previously broke whenever a file path contained a space in it.</li>
+            <li>This meant certain valid file names or folder structures couldn't be used at all with the framework.</li>
+            <li>I fixed the path-handling logic so spaces are now processed correctly instead of causing failures.</li>
+            <li>Removes a silent restriction that could affect anyone naming files naturally.</li>
           </ul>
         </div>
 
@@ -650,8 +652,10 @@
           </div>
           <div class="ticket-date-line">Jun 16 – Jul 8</div>
           <ul class="ticket-list">
-            <li>Coverage analysis previously ran on only one file at a time — limiting for larger projects</li>
-            <li>Extended framework to support multiple test files in a single coverage run</li>
+            <li>Previously, the coverage analysis tool could only run against one test file at a time.</li>
+            <li>For larger projects with many test files, this meant running the tool repeatedly instead of once.</li>
+            <li>I extended the framework so it can accept and process multiple test files in a single coverage run.</li>
+            <li>Directly improves efficiency for anyone testing larger codebases.</li>
           </ul>
         </div>
 
@@ -668,8 +672,10 @@
           </div>
           <div class="ticket-date-line">Jul 1 – Jul 3 · found independently while working on KXP-1239</div>
           <ul class="ticket-list">
-            <li>Long-standing, previously unnoticed bug in the coverage library</li>
-            <li>Not part of the original ticket — discovered and fixed proactively</li>
+            <li>While working on KXP-1239, I noticed coverage results were incorrect for anonymous functions defined inside named functions.</li>
+            <li>This was a long-standing bug that had gone unnoticed until I was working closely with the coverage internals.</li>
+            <li>I identified the root cause and fixed the instrumentation so these cases are now measured correctly.</li>
+            <li>This wasn't part of my original assignment — I found and fixed it proactively.</li>
           </ul>
         </div>
 
@@ -686,8 +692,10 @@
           </div>
           <div class="ticket-date-line">Jul 8 – Jul 15</div>
           <ul class="ticket-list">
-            <li>Users hit unexpected errors with time-based date patterns</li>
-            <li>Traced root cause to a missing safety check from a 2020 code change; added regression tests</li>
+            <li>Users were getting unexpected errors when working with certain time-based date patterns.</li>
+            <li>I traced the issue back to a missing safety check that had been removed in a 2020 code change.</li>
+            <li>I restored the missing check and added regression tests so this specific issue can't silently reappear.</li>
+            <li>Fixes a bug that had likely existed undetected for years.</li>
           </ul>
         </div>
 
@@ -964,6 +972,14 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- ========== IMAGE LIGHTBOX OVERLAY ========== -->
+  <div id="image-lightbox" class="lightbox-overlay">
+    <span class="lightbox-close">&times;</span>
+    <div class="lightbox-content-container">
+      <img class="lightbox-content" id="lightbox-img" alt="Enlarged view">
     </div>
   </div>
 

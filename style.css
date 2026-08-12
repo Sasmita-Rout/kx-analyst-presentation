@@ -2301,3 +2301,70 @@ html, body {
     line-height: 1.6;
 }
 
+
+
+/* Image Lightbox Overlay */
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    z-index: 3000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(10, 15, 30, 0.95);
+    backdrop-filter: blur(12px);
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+    opacity: 0;
+    transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lightbox-overlay.open {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox-content-container {
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+    border-radius: 16px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(0, 229, 255, 0.15);
+    background: rgba(17, 24, 39, 0.8);
+}
+
+.lightbox-content {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    cursor: default;
+    border-radius: 12px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    color: #9CA3AF;
+    font-size: 38px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all 0.2s;
+    z-index: 3001;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+.lightbox-close:hover {
+    color: #F9FAFB;
+    background: rgba(255, 255, 255, 0.15);
+    transform: rotate(90deg);
+}

@@ -1218,8 +1218,43 @@ function initSlideAttachments() {
   }
 }
 
+
+// 10. Image Lightbox
+function initLightbox() {
+  const lightbox = document.getElementById('image-lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+  
+  if (!lightbox || !lightboxImg) return;
+  
+  // Handle clicks on any image within slides or modals
+  document.addEventListener('click', (e) => {
+    const target = e.target;
+    if (target.tagName === 'IMG' && !target.closest('.lightbox-overlay')) {
+      // Don't trigger lightbox if clicking icons or elements not representing mockups
+      if (target.classList.contains('nav-icon')) return;
+      
+      e.stopPropagation();
+      lightboxImg.src = target.src;
+      lightboxImg.alt = target.alt || 'Screenshot enlarged view';
+      lightbox.classList.add('open');
+    }
+  });
+  
+  const closeLightbox = () => {
+    lightbox.classList.remove('open');
+  };
+  
+  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', closeLightbox);
+  lightboxImg.addEventListener('click', (e) => {
+    e.stopPropagation(); // don't close when clicking the image itself
+  });
+}
+
 // 11. Initialization
 function init() {
+  initLightbox();
   initCanvas();
   initPlaceholders();
   initScreenshots();
