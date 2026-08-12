@@ -14,14 +14,14 @@ const state = {
 
 const SPEAKER_NOTES = [
   "20 sec. Just set the stage — no content yet.",
-  "1.5 min. Introduce KX Analyst Orbit as a visual, browser-based interface sitting on top of kdb+. Explain that it enables both technical devs to code directly and business users to query and transform data without code.",
+  "1.5 min. Introduce KX Analyst as a visual, browser-based interface sitting on top of kdb+. Explain that it enables both technical devs to code directly and business users to query and transform data without code.",
   "2 min. Keep this relatable — describe the pain, not the tech. This sets up why the next slide (the solution) matters.",
   "2 min. This is the 'here's what it is' slide — keep it plain-English, save technical depth for Q&A.",
   "1 min. Replace the last row with your actual team makeup — this is the one row an MD is likely to ask about directly ('who on our team uses this and how?').",
-  "1.5 min. Optional slide, good if time allows — shows this isn't a narrow tool. The 'Analyst Orbit building Analyst Orbit' card is the most memorable one — mention it even if you skip the others.",
-  "2 min. Mention both paths — the dev lifecycle AND the simpler data-exploration path — to show Analyst Orbit serves the whole team, not just engineers.",
-  "2.5 min. This is the slide most likely to get a technical question from the MD — know the remote/IPC point cold. Backup: Analyst Orbit can connect to a completely separate kdb+ process on another machine via IPC (Remote Editors) — this means huge datasets never have to move into the Analyst Orbit environment itself; only the query result comes back.",
-  "2.5 min. This slide covers what's actually inside the IDE — Q menu is where developers spend most of their time (Go to Definition and Uses/Selection make navigating a large codebase manageable). Tools menu is what makes Analyst Orbit useful beyond coding. Help menu signals product maturity — built-in docs and a real learning path.",
+  "1.5 min. Optional slide, good if time allows — shows this isn't a narrow tool. The 'Analyst building Analyst' card is the most memorable one — mention it even if you skip the others.",
+  "2 min. Mention both paths — the dev lifecycle AND the simpler data-exploration path — to show Analyst serves the whole team, not just engineers.",
+  "2.5 min. This is the slide most likely to get a technical question from the MD — know the remote/IPC point cold. Backup: Analyst can connect to a completely separate kdb+ process on another machine via IPC (Remote Editors) — this means huge datasets never have to move into the Analyst environment itself; only the query result comes back.",
+  "2.5 min. This slide covers what's actually inside the IDE — Q menu is where developers spend most of their time (Go to Definition and Uses/Selection make navigating a large codebase manageable). Tools menu is what makes Analyst useful beyond coding. Help menu signals product maturity — built-in docs and a real learning path.",
   "2 min. This is your most memorable slide — prioritize getting even one real screenshot here over having none. A short screen recording (30-60 sec) works even better than static images if your tool supports embedded video.",
   "1.5 min. If you don't have hard numbers yet, say so honestly — e.g. 'we're still measuring this precisely, early indication is positive.' MDs respect an honest estimate over an invented number.",
   "2 min. Emphasize the axqcoverage discovery (Card 3/4) — it shows initiative beyond the assigned ticket, not just task completion.",
@@ -203,12 +203,10 @@ function onSlideEnter(index) {
     }
   });
 
-  if (index === 1) { // Slide 2 - What is KX Analyst Orbit
-    const visual = activeSlide.querySelector('.about-visual-card');
-    if (visual) visual.classList.add('animate-in');
-    const items = activeSlide.querySelectorAll('.about-bullet-item');
+  if (index === 1) { // Slide 2 - What is KX Analyst
+    const items = activeSlide.querySelectorAll('.about-bullet-card');
     items.forEach((item, i) => {
-      item.style.animationDelay = `${0.2 + i * 0.1}s`;
+      item.style.animationDelay = `${i * 0.15}s`;
       item.classList.add('animate-in');
     });
   }
@@ -244,9 +242,9 @@ function onSlideEnter(index) {
     const analystBox = activeSlide.querySelector('#sol-analyst-box');
     if (analystBox) analystBox.classList.remove('pulse');
     const solCaption = activeSlide.querySelector('#solution-flow-caption');
-    if (solCaption) solCaption.textContent = 'Click "Play" to see how Analyst Orbit handles the same 5 requests — no queue this time →';
+    if (solCaption) solCaption.textContent = 'Click "Play" to see how Analyst handles the same 5 requests — no queue this time →';
     const solBtn = activeSlide.querySelector('#solution-play-btn');
-    if (solBtn) { solBtn.disabled = false; solBtn.textContent = '▶ Show How Analyst Orbit Resolves This'; }
+    if (solBtn) { solBtn.disabled = false; solBtn.textContent = '▶ Show How Analyst Resolves This'; }
   }
   else if (index === 4) { // Slide 5 - User cards
     const userCards = activeSlide.querySelectorAll('.user-card');
@@ -288,7 +286,7 @@ function onSlideEnter(index) {
     const dot = activeSlide.querySelector('#flow-dot');
     if (dot) dot.classList.remove('active', 'returning');
     const caption = activeSlide.querySelector('#arch-flow-caption');
-    if (caption) caption.textContent = 'Click "Play" to watch this query travel through Analyst Orbit, step by step →';
+    if (caption) caption.textContent = 'Click "Play" to watch this query travel through Analyst, step by step →';
     const archBtn = activeSlide.querySelector('#arch-play-btn');
     if (archBtn) {
       archBtn.disabled = false;
@@ -570,7 +568,7 @@ function playArchFlow() {
 
   const steps = [
     { layerIndex: 0, git: false, caption: '1. You type a query in the browser — no local install needed.' },
-    { layerIndex: 1, git: false, caption: "2. KX Analyst Orbit's Web UI sends the query to the Orbit runtime." },
+    { layerIndex: 1, git: false, caption: "2. KX Analyst's Web UI sends the query to the Analyst runtime." },
     { layerIndex: 2, git: true,  caption: '3. The Workspace process prepares execution — your code stays Git-tracked here.' },
     { layerIndex: 3, git: false, caption: '4. The query runs on kdb+ — locally, or on a remote process via IPC.' },
     { layerIndex: 4, git: false, caption: '5. kdb+ scans the massive dataset (real-time + historical) to compute the result.' },
@@ -780,7 +778,7 @@ const TOOL_DETAILS = {
     name: "Git Integration",
     icon: "🌿",
     badge: "DevOps & Governance",
-    desc: "Enterprise Git version control embedded natively inside the Analyst Orbit workspace. Supports branch creation, commit history, pull/push remotes, visual diffing, and merge conflict resolution.",
+    desc: "Enterprise Git version control embedded natively inside the Analyst workspace. Supports branch creation, commit history, pull/push remotes, visual diffing, and merge conflict resolution.",
     value: "Guarantees enterprise governance, audit trails, and seamless team collaboration. Ensures all analytics code changes are version-tracked before reaching production servers."
   },
   qcumber: {
