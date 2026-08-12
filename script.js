@@ -755,7 +755,8 @@ const DEFAULT_TOOL_IMAGES = {
   transformer: "images/table-transformer.png",
   git: "images/git.png",
   qcumber: "images/axqcumber.png",
-  profiler: "images/profiler.png"
+  profiler: "images/profiler.png",
+  testing: "images/testing.png"
 };
 
 // TOOL DETAILS DICTIONARY
@@ -817,7 +818,27 @@ const TOOL_DETAILS = {
     desc: "Real-time execution profiler that analyzes q code down to line-by-line timing, function call counts, and memory allocations during heavy tick volume runs.",
     value: "Pinpoints performance bottlenecks instantly, ensuring trading analytics run at sub-millisecond speeds even during extreme market volatility."
   },
-
+  debugger: {
+    name: "Interactive Debugger",
+    icon: "🐛",
+    badge: "Developer Tool",
+    desc: "Visual step-by-step debugger for q logic. Enables developers to set breakpoints, step into/over functions, inspect stack callframes, monitor variable values, and evaluate expressions at runtime.",
+    value: "Reduces issue resolution time by over 70%. Developers no longer need to insert manual print statements to trace complex trading analytics bugs."
+  },
+  testing: {
+    name: "Testing Unit",
+    icon: "🧪",
+    badge: "Quality Assurance",
+    desc: "Automated unit testing and code coverage analysis specifically built for the q language. Enables continuous integration checks and sanity-testing of code updates before merge.",
+    value: "Guarantees that new changes do not break existing queries, catching bugs early in the developer workflow."
+  },
+  linting: {
+    name: "Code Linting",
+    icon: "🚨",
+    badge: "Code Standards",
+    desc: "Automated source code analyzer that checks q/kdb+ code for syntax issues, formatting errors, deprecations, and deviations from team coding guidelines.",
+    value: "Enforces consistent code quality across distributed developer teams automatically."
+  }
 };
 
 // TOOL MINI-ANIMATIONS — "See It In Action" per tool
@@ -974,7 +995,36 @@ const TOOL_ANIMATIONS = {
     });
     toolAnimTimers.push(setTimeout(() => stage.querySelector('#ta-warn').classList.add('in'), 1400));
   },
-
+  debugger: (stage) => {
+    stage.innerHTML = `
+      <div class="ta-mono">f:{[x;y] <span style="color:#EF4444;">●</span> x+y}</div>
+      <div class="ta-fadein" id="ta-paused" style="font-size:0.75rem;"><span class="ta-badge amber">⏸ Paused at breakpoint</span></div>
+      <div class="ta-fadein" id="ta-vars" style="font-size:0.72rem;color:#9CA3AF;font-family:'Courier New',monospace;">x = 10 &nbsp; y = 20</div>
+    `;
+    toolAnimTimers.push(setTimeout(() => stage.querySelector('#ta-paused').classList.add('in'), 500));
+    toolAnimTimers.push(setTimeout(() => stage.querySelector('#ta-vars').classList.add('in'), 950));
+  },
+  testing: (stage) => {
+    stage.innerHTML = `
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <div style="display:flex;justify-content:space-between;font-size:0.75rem;color:#D1D5DB;"><span>test_avg_price</span><span id="ta-t1"><span class="ta-spinner"></span></span></div>
+        <div style="display:flex;justify-content:space-between;font-size:0.75rem;color:#D1D5DB;"><span>test_null_handling</span><span id="ta-t2"><span class="ta-spinner"></span></span></div>
+        <div class="ta-fadein" id="ta-tsum" style="font-size:0.78rem;color:#34D399;font-weight:700;margin-top:4px;">All tests passed (2/2) ✅</div>
+      </div>
+    `;
+    const t1 = stage.querySelector('#ta-t1'), t2 = stage.querySelector('#ta-t2');
+    const tsum = stage.querySelector('#ta-tsum');
+    toolAnimTimers.push(setTimeout(() => t1.innerHTML = '<span class="ta-badge green">✓ pass</span>', 500));
+    toolAnimTimers.push(setTimeout(() => t2.innerHTML = '<span class="ta-badge green">✓ pass</span>', 1000));
+    toolAnimTimers.push(setTimeout(() => tsum.classList.add('in'), 1300));
+  },
+  linting: (stage) => {
+    stage.innerHTML = `
+      <div class="ta-mono" style="font-size:0.75rem;">Linting source directories...</div>
+      <div class="ta-fadein" id="ta-lint-result" style="font-size:0.78rem;color:#34D399;font-weight:700;margin-top:4px;">No styling errors found ✨</div>
+    `;
+    toolAnimTimers.push(setTimeout(() => stage.querySelector('#ta-lint-result').classList.add('in'), 800));
+  }
 };
 
 function playToolAnimation(toolId) {
