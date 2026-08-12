@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KX Analyst Orbit — Product Overview & Team Update presentation">
+  <title>KX Analyst Orbit — Product Overview & Team Update</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Network Background Canvas -->
+  <canvas id="network-canvas"></canvas>
+
+  <!-- ==================== PRESENTATION ==================== -->
+  <div class="presentation">
+
+    <!-- ========== SLIDE 1 — Title ========== -->
+    <div class="slide title-slide active" data-slide-id="slide-1">
+      <div class="title-glow"></div>
+      <h1 class="title-main">KX Analyst Orbit</h1>
+      <p class="title-sub">Product Overview &amp; Team Update</p>
+      <div class="title-footer">
+        <span class="placeholder" data-key="presenter-name" data-placeholder="Your Name" contenteditable="true">Sasmita Rout &amp; Sharan Sanamani</span>
+        <span>·</span>
+        <span class="placeholder" data-key="team-name" data-placeholder="Team Name" contenteditable="true">Team Name</span>
+        <span>·</span>
+        <span class="placeholder" data-key="date" data-placeholder="Date" contenteditable="true">Date</span>
+      </div>
+      <button class="slide-attach-btn" title="Attach screenshot to this slide">📷 Attach Slide Screenshot</button>
+      <div class="slide-image-container" style="display:none;">
+        <div class="slide-image-frame">
+          <div class="slide-image-placeholder">Click or drop image for Slide 1</div>
+        </div>
+        <button class="remove-slide-image-btn">✕ Remove</button>
+      </div>
+    </div>
+
+    <!-- ========== SLIDE 2 — What is KX Analyst Orbit ========== -->
+    <div class="slide" data-slide-id="slide-2">
+      <h2 class="slide-headline">What is KX Analyst Orbit?</h2>
+      <div class="about-layout">
+        <!-- Left Column: Visual representation -->
+        <div class="about-visual-card">
+          <div class="visual-badge">SYSTEM STACK</div>
+          <div class="visual-stack">
+            <div class="stack-box stack-users">
+              <span class="stack-title">Users (Biz &amp; Devs)</span>
+              <span class="stack-sub">Visual interfaces &amp; IDE</span>
+            </div>
+            <div class="stack-arrow">⇅</div>
+            <div class="stack-box stack-orbit highlight">
+              <span class="stack-title">KX Analyst Orbit</span>
+              <span class="stack-sub">Browser-based visual abstraction layer</span>
+            </div>
+            <div class="stack-arrow">⇅</div>
+            <div class="stack-box stack-kdb">
+              <span class="stack-title">kdb+ Database</span>
+              <span class="stack-sub">High-volume fast time-series computing</span>
+            </div>
+          </div>
+        </div>
+        <!-- Right Column: Bullet Points -->
+        <div class="about-bullets">
+          <div class="about-bullet-item">
+            <div class="about-bullet-icon">🌐</div>
+            <div class="about-bullet-content">
+              <h4>Web-Browser-Based Tool</h4>
+              <p>Sits on top of kdb+, a powerful database built for handling huge volumes of fast-moving data.</p>
+            </div>
+          </div>
+          <div class="about-bullet-item">
+            <div class="about-bullet-icon">🎨</div>
+            <div class="about-bullet-content">
+              <h4>Visual &amp; Easy-to-Use Interface</h4>
+              <p>Gives people a visual, easy-to-use interface for the same underlying power, instead of requiring specialist code.</p>
+            </div>
+          </div>
+          <div class="about-bullet-item">
+            <div class="about-bullet-icon">👥</div>
+            <div class="about-bullet-content">
+              <h4>Dual-Purpose Environment</h4>
+              <p>Technical developers write and test code directly inside, while business/analyst users import, transform, and explore data without coding.</p>
+            </div>
+          </div>
+          <div class="about-bullet-item">
+            <div class="about-bullet-icon">⚡</div>
+            <div class="about-bullet-content">
+              <h4>Efficient Backend Execution</h4>
+              <p>Everything runs through the browser, but the actual heavy computation still happens on the fast database behind the scenes.</p>
+            </div>
+          </div>
+          <div class="about-bullet-item">
+            <div class="about-bullet-icon">🚀</div>
+            <div class="about-bullet-content">
+              <h4>Wider Technology Adoption</h4>
+              <p>In short, it makes a highly specialized piece of technology usable by a much wider group of people.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="slide-attach-btn" title="Attach screenshot to this slide">📷 Attach Slide Screenshot</button>
+      <div class="slide-image-container" style="display:none;">
+        <div class="slide-image-frame">
+          <div class="slide-image-placeholder">Click or drop image for Slide 2</div>
+        </div>
+        <button class="remove-slide-image-btn">✕ Remove</button>
+      </div>
+    </div>
+
+    <!-- ========== SLIDE 2 — The Business Problem ========== -->
+    <div class="slide" data-slide-id="slide-3">
+      <h2 class="slide-headline">Why This Matters</h2>
+      <div class="problem-layout">
+        <!-- Left: Problem List -->
+        <div class="problem-list">
+          <div class="problem-item">
+            <div class="problem-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <div>
+              <h4>The Data Challenge</h4>
+              <p>Market and time-series data — trades, quotes, ticks — arrives in huge volume and at high speed. kdb+ handles this, but working with it means writing raw q code by hand.</p>
+            </div>
+          </div>
+          <div class="problem-item">
+            <div class="problem-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <h4>The Skills Bottleneck</h4>
+              <p>Only a small number of specialist q developers can build or modify analytics. Every new report or analysis request goes through them.</p>
+            </div>
+          </div>
+          <div class="problem-item">
+            <div class="problem-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <h4>The Business Cost</h4>
+              <p>Slowed decision-making, a backlog of requests, and business/quant teams unable to move at their own pace — dependent on engineering availability.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Right: Funnel Diagram -->
+        <div class="funnel-container">
+          <p class="problem-context">This is what happens when every analytics request depends on one scarce skill set — watch the queue build:</p>
+          <svg class="funnel-svg" viewBox="0 0 320 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g class="req-icon" id="req-icon-1" data-dx="119" data-dy="221" style="transform-origin:41px 31px;">
+              <rect x="20" y="10" width="42" height="42" rx="8" fill="rgba(59,130,246,0.15)" stroke="rgba(59,130,246,0.4)" stroke-width="1.5"/>
+              <text x="41" y="36" text-anchor="middle" fill="#3B82F6" font-size="18">📊</text>
+            </g>
+            <g class="req-icon" id="req-icon-2" data-dx="59" data-dy="221" style="transform-origin:101px 31px;">
+              <rect x="80" y="10" width="42" height="42" rx="8" fill="rgba(0,229,255,0.1)" stroke="rgba(0,229,255,0.3)" stroke-width="1.5"/>
+              <text x="101" y="36" text-anchor="middle" fill="#00E5FF" font-size="18">📈</text>
+            </g>
+            <g class="req-icon" id="req-icon-3" data-dx="-1" data-dy="221" style="transform-origin:161px 31px;">
+              <rect x="140" y="10" width="42" height="42" rx="8" fill="rgba(20,184,166,0.12)" stroke="rgba(20,184,166,0.3)" stroke-width="1.5"/>
+              <text x="161" y="36" text-anchor="middle" fill="#14B8A6" font-size="18">❓</text>
+            </g>
+            <g class="req-icon" id="req-icon-4" data-dx="-61" data-dy="221" style="transform-origin:221px 31px;">
+              <rect x="200" y="10" width="42" height="42" rx="8" fill="rgba(245,158,11,0.12)" stroke="rgba(245,158,11,0.3)" stroke-width="1.5"/>
+              <text x="221" y="36" text-anchor="middle" fill="#F59E0B" font-size="18">📋</text>
+            </g>
+            <g class="req-icon" id="req-icon-5" data-dx="-121" data-dy="221" style="transform-origin:281px 31px;">
+              <rect x="260" y="10" width="42" height="42" rx="8" fill="rgba(139,92,246,0.12)" stroke="rgba(139,92,246,0.3)" stroke-width="1.5"/>
+              <text x="281" y="36" text-anchor="middle" fill="#8B5CF6" font-size="18">📄</text>
+            </g>
+            <text x="160" y="80" text-anchor="middle" fill="#9CA3AF" font-size="11" font-family="Inter, sans-serif">Requests from business, quants, risk…</text>
+            <polygon points="30,100 290,100 200,220 120,220" fill="rgba(239,68,68,0.06)" stroke="rgba(239,68,68,0.25)" stroke-width="1.5"/>
+            <line x1="100" y1="115" x2="145" y2="190" stroke="rgba(239,68,68,0.2)" stroke-width="1" stroke-dasharray="4"/>
+            <line x1="220" y1="115" x2="175" y2="190" stroke="rgba(239,68,68,0.2)" stroke-width="1" stroke-dasharray="4"/>
+            <line x1="160" y1="110" x2="160" y2="195" stroke="rgba(239,68,68,0.2)" stroke-width="1" stroke-dasharray="4"/>
+            <rect id="bottleneck-box" x="130" y="230" width="60" height="44" rx="10" fill="rgba(239,68,68,0.1)" stroke="rgba(239,68,68,0.35)" stroke-width="1.5"/>
+            <text x="160" y="248" text-anchor="middle" fill="#EF4444" font-size="12" font-family="Inter, sans-serif" font-weight="700">q dev</text>
+            <text x="160" y="264" text-anchor="middle" fill="#9CA3AF" font-size="9" font-family="Inter, sans-serif">(bottleneck)</text>
+            <circle id="queue-badge" cx="186" cy="230" r="11" fill="#EF4444" opacity="0"/>
+            <text id="queue-badge-text" x="186" y="234" text-anchor="middle" fill="#fff" font-size="11" font-weight="700" opacity="0">0</text>
+            <line id="slower-arrow" x1="160" y1="280" x2="160" y2="320" stroke="rgba(239,68,68,0.3)" stroke-width="2" marker-end="url(#arrowRed)"/>
+            <text id="slower-output-text" x="160" y="345" text-anchor="middle" fill="#6B7280" font-size="10" font-family="Inter, sans-serif">Slower output</text>
+            <defs>
+              <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                <polygon points="0 0, 10 3.5, 0 7" fill="rgba(239,68,68,0.4)"/>
+              </marker>
+            </defs>
+          </svg>
+        </div>
+      </div>
+      <p class="arch-flow-caption" id="problem-flow-caption">Click "Play" to see how this backlog builds up in real teams →</p>
+      <button class="arch-play-btn" id="problem-play-btn">▶ Show How This Happens</button>
+      <button class="slide-attach-btn" title="Attach screenshot to this slide">📷 Attach Slide Screenshot</button>
+      <div class="slide-image-container" style="display:none;">
+        <div class="slide-image-frame">
+          <div class="slide-image-placeholder">Click or drop image for Slide 3</div>
+        </div>
+        <button class="remove-slide-image-btn">✕ Remove</button>
+      </div>
+    </div>
+
+    <!-- ========== SLIDE 3 — Introducing KX Analyst Orbit ========== -->
+    <div class="slide" data-slide-id="slide-4">
+      <h2 class="slide-headline">Our Solution</h2>
+      <p class="solution-oneliner">A browser-based visual environment for building, testing, and running kdb+ analytics — without needing deep q expertise.</p>
+      <div class="solution-flow">
+        <div class="flow-node">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          <span style="font-weight:700;color:#F9FAFB;font-size:0.9rem;">Browser</span>
+        </div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-node highlight">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <span style="font-weight:700;color:#F9FAFB;font-size:0.9rem;">KX Analyst Orbit</span>
+        </div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-node">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          <span style="font-weight:700;color:#F9FAFB;font-size:0.9rem;">q / kdb+</span>
+        </div>
+      </div>
+      <p style="text-align:center;font-size:0.75rem;color:#9CA3AF;margin-top:20px;">💡 <em>Click any tool below for details &amp; dedicated screenshot attachment</em></p>
+      <div class="flow-branches">
+        <span class="branch-tag tool-btn" data-tool="editor">Editor ℹ️</span>
+        <span class="branch-tag tool-btn" data-tool="inspector">Visual Inspector ℹ️</span>
+        <span class="branch-tag tool-btn" data-tool="importer">Importer ℹ️</span>
+        <span class="branch-tag tool-btn" data-tool="exporter">Table Exporter ℹ️</span>
+        <span class="branch-tag tool-btn" data-tool="transformer">Transformer ℹ️</span>
+        <span class="branch-tag tool-btn" data-tool="git">Git ℹ️</span>
+        <span class="branch-tag tool-btn" data-tool="qcumber">QCumber ℹ️</span>
+      </div>
+      <div class="solution-resolve-demo">
+        <div class="sol-chips-row" id="sol-chips-row">
+          <div class="sol-chip" id="sol-chip-1">📊</div>
+          <div class="sol-chip" id="sol-chip-2">📈</div>
+          <div class="sol-chip" id="sol-chip-3">❓</div>
+          <div class="sol-chip" id="sol-chip-4">📋</div>
+          <div class="sol-chip" id="sol-chip-5">📄</div>
+        </div>
+        <div class="sol-arrow-down">↓ &nbsp; ↓ &nbsp; ↓ &nbsp; ↓ &nbsp; ↓</div>
+        <div class="sol-analyst-box" id="sol-analyst-box">⚡ KX Analyst Orbit — self-service for all of them</div>
+      </div>
+      <p class="arch-flow-caption" id="solution-flow-caption">Click "Play" to see how Analyst Orbit handles the same 5 requests — no queue this time →</p>
+      <button class="arch-play-btn" id="solution-play-btn">▶ Show How Analyst Resolves This</button>
+      <button class="slide-attach-btn" title="Attach screenshot to this slide">📷 Attach Slide Screenshot</button>
+      <div class="slide-image-container" style="display:none;">
+        <div class="slide-image-frame">
+          <div class="slide-image-placeholder">Click or drop image for Slide 4</div>
+        </div>
+        <button class="remove-slide-image-btn">✕ Remove</button>
+      </div>
+    </div>
+
+    <!-- ========== SLIDE 4 — Who Uses It ========== -->
+    <div class="slide" data-slide-id="slide-5">
+      <h2 class="slide-headline">Built for Both Ends of the Spectrum</h2>
+      <div class="users-grid">
+        <!-- Technical Users Card -->
+        <div class="user-card user-card-tech">
+          <div class="user-card-header">
+            <div class="user-card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3>Technical Users (Developers)</h3>
+          </div>
+          <div class="user-card-row">
+            <div class="row-label">What They Use</div>
+            <div class="row-value tool-tags-inline">
+              <span class="tool-btn-inline" data-tool="editor">Editor</span>,
+              <span class="tool-btn-inline" data-tool="debugger">Debugger</span>,
+              <span class="tool-btn-inline" data-tool="profiler">Profiler</span>,
+              <span class="tool-btn-inline" data-tool="differ">Code Differ</span>
+            </div>
+          </div>
+          <div class="user-card-row">
+            <div class="row-label">What They Do</div>
+            <div class="row-value">Write and modify q code, deep development work, performance tuning</div>
+          </div>
+          <div class="user-card-row">
+            <div class="row-label">Skill Level</div>
+            <div class="row-value">Experienced q/kdb+ knowledge</div>
+          </div>
+          <div class="user-card-row">
+            <div class="row-label">Example Task</div>
+            <div class="row-value">Build/modify a core analytics function</div>
+          </div>
+        </div>
+        <!-- Business Users Card -->
+        <div class="user-card user-card-biz">
+          <div class="user-card-header">
+            <div class="user-card-icon" style="background:rgba(20,184,166,0.1);color:#14B8A6;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </div>
+            <h3>Business / Analyst Users</h3>
+          </div>
+          <div class="user-card-row">
+            <div class="row-label">What They Use</div>
+            <div class="row-value tool-tags-inline">
+              <span class="tool-btn-inline" data-tool="importer">Importer</span>,
+              <span class="tool-btn-inline" data-tool="transformer">Transformer</span>,
+              <span class="tool-btn-inline" data-tool="inspector">Visual Inspector</span>
+            </div>
+          </div>
+          <div class="user-card-row">
+            <div class="row-label">What They Do</div>
+            <div class="row-value">Explore data, build reports/views without writing code</div>
+          </div>
+          <div class="user-card-row">
+            <div class="row-label">Skill Level</div>
+            <div class="row-value">Little to no coding required</div>
+          </div>
+          <div class="user-card-row">
+            <div class="row-label">Example Task</div>
+            <div class="row-value">Import a dataset, filter and visualize it</div>
+          </div>
+        </div>
+      </div>
+      <button class="slide-attach-btn" title="Attach screenshot to this slide">📷 Attach Slide Screenshot</button>
+      <div class="slide-image-container" style="display:none;">
+        <div class="slide-image-frame">
+          <div class="slide-image-placeholder">Click or drop image for Slide 5</div>
+        </div>
+        <button class="remove-slide-image-btn">✕ Remove</button>
+      </div>
+    </div>
+
+    <!-- ========== SLIDE 5 — Beyond Our Team: Other Use Cases ========== -->
+    <div class="slide" data-slide-id="slide-6">
+      <h2 class="slide-headline">Beyond Our Team — Other Ways This Gets Used</h2>
+      <div class="usecase-grid">
+        <div class="usecase-card">
+          <div class="usecase-card-header">
+            <div class="usecase-icon" style="background:rgba(59,130,246,0.12);color:#3B82F6;">📡</div>
+            <h3>Sensor &amp; Equipment Data</h3>
+          </div>
+          <ul class="usecase-list">
+            <li>Teams working with continuous streams of readings from machines, equipment, or vehicles</li>
+            <li>Load large volumes of readings into tables and save them to disk for later analysis</li>
+            <li>Transform incoming data — clean it up, filter out noise, combine readings into summaries</li>
+            <li>Import raw logs (CSV, JSON) as they come in, and export processed results back out to reports or other systems</li>
+          </ul>
+        </div>
+        <div class="usecase-card">
+          <div class="usecase-card-header">
+            <div class="usecase-icon" style="background:rgba(239,68,68,0.12);color:#EF4444;">🔍</div>
+            <h3>Surveillance &amp; Monitoring</h3>
+          </div>
+          <ul class="usecase-list">
+            <li>Teams watching large volumes of transaction or event data for unusual patterns</li>
+            <li>Build alert rules directly in q — flag abnormal volume, repeated suspicious patterns, spikes against a historical baseline</li>
+            <li>Visual Inspector helps spot the pattern visually, not just in raw numbers</li>
+            <li>Example: exchanges and broker-dealers use kdb+-based systems like this for market abuse and fraud detection</li>
+          </ul>
+        </div>
+        <div class="usecase-card">
+          <div class="usecase-card-header">
+            <div class="usecase-icon" style="background:rgba(16,185,129,0.12);color:#10B981;">💻</div>
+            <h3>q Developers</h3>
+          </div>
+          <ul class="usecase-list">
+            <li>Analyst Orbit works as a genuine all-in-one IDE — development and testing live in the same environment</li>
+            <li>Write code, execute it, debug it, then run QCumber tests immediately after — no context-switching</li>
+            <li>Git is integrated too, so review and version control happen in the same place</li>
+            <li>Useful especially where q developers are spread across different offices/locations</li>
+          </ul>
+        </div>
+        <div class="usecase-card">
+          <div class="usecase-card-header">
+            <div class="usecase-icon" style="background:rgba(245,158,11,0.12);color:#F59E0B;">🔁</div>
+            <h3>Analyst Orbit Building Analyst Orbit</h3>
+          </div>
+          <ul class="usecase-list">
+            <li>The Analyst Orbit team itself uses Analyst Orbit to build and test Analyst Orbit's own components — dogfooding its own product</li>
+            <li>Since Analyst Orbit is largely written in q, developers iterate on Analyst Orbit's own modules from inside Analyst Orbit</li>
+            <li>QCumber tests Analyst Orbit's own code changes before release — the same tool every other team uses</li>
+            <li>Makes Analyst Orbit a self-iterative tool — improvements get validated using the product itself before reaching users</li>
+          </ul>
+        </div>
+      </div>
+      <button class="slide-attach-btn" title="Attach screenshot to this slide">📷 Attach Slide Screenshot</button>
+      <div class="slide-image-container" style="display:none;">
+        <div class="slide-image-frame">
+          <div class="slide-image-placeholder">Click or drop image for Slide 6</div>
+        </div>
+        <button class="remove-slide-image-btn">✕ Remove</button>
+      </div>
+    </div>
+
+    <!-- ========== SLIDE 6 — How It's Used (Workflow) ========== -->
+    <div class="slide" data-slide-id="slide-7">
+      <h2 class="slide-headline">The Workflow — From Code to Production</h2>
+      <div class="timeline">
+        <div class="timeline-track">
+          <div class="timeline-track-fill" id="timeline-track-fill"></div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-number">1</div>
+          <div class="step-label">Load Repo</div>
+          <div class="step-desc">Pull Git repository into workspace</div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-number">2</div>
+          <div class="step-label">Navigate</div>
+          <div class="step-desc">Find the relevant module or function</div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-number">3</div>
+          <div class="step-label">Run &amp; Debug</div>
+          <div class="step-desc">Execute code, inspect, step through issues</div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-number">4</div>
+          <div class="step-label">Modify</div>
+          <div class="step-desc">Make the required code change</div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-number">5</div>
+          <div class="step-label">Test</div>
+          <div class="step-desc">Run QCumber automated tests</div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-number">6</div>
+          <div class="step-label">Commit</div>
+          <div class="step-desc">Save changes back to Git</div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-number">7</div>
+          <div class="step-label">Review</div>
+          <div class="step-desc">Merge request → teammate review</div>
+        </div>
+      </div>
+      <button class="arch-play-btn" id="workflow-replay-btn" style="margin-top:20px;">▶ Replay Workflow</button>
+      <div class="data-path-callout">
+        <p><strong>Data-exploration path:</strong> Import data → Transform/clean → Inspect visually → done — no coding required.</p>
+      </div>
+      <button class="slide-attach-btn" title="Attach screenshot to this slide">📷 Attach Slide Screenshot</button>
+      <div class="slide-image-container" style="display:none;">
+        <div class="slide-image-frame">
+          <div class="slide-image-placeholder">Click or drop image for Slide 7</div>
+        </div>
+        <button class="remove-slide-image-btn">✕ Remove</button>
+      </div>
+    </div>
+
+    <!-- ========== SLIDE 7 — Architecture Overview ========== -->
+    <div class="slide" data-slide-id="slide-8">
+      <h2 class="slide-headline">How It All Fits Together</h2>
+      <div class="arch-query-bar">
+        <span class="arch-query-label">Example query:</span>
+        <code class="arch-query-code">select avg price by sym from trade</code>
+      </div>
+      <div class="arch-diagram" id="arch-diagram">
+        <!-- Layer 1: Browser -->
+        <div class="arch-layer arch-layer-1">
+          <h4>🌐 Browser (User)</h4>
+          <p>Access KX Analyst Orbit from any browser — no local install</p>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <!-- Layer 2: KX Analyst Orbit Web UI -->
+        <div class="arch-layer arch-layer-2">
+          <h4>⚡ KX Analyst Orbit — Web UI</h4>
+          <p>
+            <span class="tool-btn-inline" data-tool="editor">Editor</span> · 
+            <span class="tool-btn-inline" data-tool="inspector">Visual Inspector</span> · 
+            <span class="tool-btn-inline" data-tool="transformer">Transformer</span> · 
+            <span class="tool-btn-inline" data-tool="debugger">Debugger</span>
+          </p>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <!-- Layer 3: Workspace Process -->
+        <div class="arch-layer arch-layer-3" style="position:relative;">
+          <h4>📁 Workspace Process</h4>
+          <p>Code execution, session state, file management</p>
+          <!-- Git box connected to this layer -->
+          <div class="arch-git-box tool-btn" data-tool="git" style="cursor:pointer;" title="Click for Git tool details">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><line x1="1.05" y1="12" x2="7" y2="12"/><line x1="17.01" y1="12" x2="22.96" y2="12"/></svg>
+            <span style="font-size:0.8rem;color:#D1D5DB;font-weight:600;">Git Repository</span>
+            <span style="font-size:0.65rem;color:#6B7280;">← push / pull →</span>
+          </div>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <!-- Layer 4: kdb+ -->
+        <div class="arch-layer arch-layer-4">
+          <h4>🔷 kdb+ / Remote Process</h4>
+          <p>Local or remote, connected via IPC</p>
+        </div>
+        <div class="arch-arrow">↓</div>
+        <!-- Layer 5: Data -->
+        <div class="arch-layer arch-layer-5">
+          <h4>💾 Massive Datasets</h4>
+          <p>Real-time + historical market data</p>
+        </div>
+        <div class="flow-dot" id="flow-dot"></div>
+      </div>
+      <p class="arch-flow-caption" id="arch-flow-caption">Click "Play" to watch this query travel through Analyst Orbit, step by step →</p>
+      <button class="arch-play-btn" id="arch-play-btn">▶ Play Data Flow</button>
+      <p class="arch-caption">"You work in the browser. Your code lives in a Git-connected workspace. The heavy computation runs on kdb+ — either locally or on a remote process."</p>
+      <button class="slide-attach-btn" title="Attach screenshot to this slide">📷 Attach Slide Screenshot</button>
+      <div class="slide-image-container" style="display:none;">
+        <div class="slide-image-frame">
+          <div class="slide-image-placeholder">Click or drop image for Slide 8</div>
+        </div>
+        <button class="remove-slide-image-btn">✕ Remove</button>
+      </div>
+    </div>
+
+    <!-- ========== SLIDE 8 — Inside the IDE: Analyst Orbit Features ========== -->
+    <div class="slide" data-slide-id="slide-9">
+      <h2 class="slide-headline">Inside the IDE — What Each Menu Does</h2>
+      <p class="feature-subtitle">EDIT = change code · Q = run/understand code · TOOLS = use Analyst Orbit's toolkit · HELP = learn how it works</p>
+      <div class="feature-columns">
+        <div class="feature-col">
+          <div class="feature-col-header">
+            <div class="feature-col-icon" style="background:rgba(0,229,255,0.12);color:#00E5FF;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3>Q Menu — Work with Code</h3>
+          </div>
+          <ul class="feature-list">
+            <li><strong>Execute</strong> — run selected q code</li>
+            <li><strong>Inspect</strong> — explore a result visually</li>
+            <li><strong>Profile</strong> — find slow code</li>
+            <li><strong>Go to Definition</strong> — jump to where something is defined</li>
+            <li><strong>Uses (Selection)</strong> — find everywhere something is used</li>
+            <li><strong>Quick Debugger</strong> — step through code to find issues</li>
+            <li><strong>Bench</strong> — measure how fast code runs</li>
+          </ul>
+        </div>
+        <div class="feature-col">
+          <div class="feature-col-header">
+            <div class="feature-col-icon" style="background:rgba(16,185,129,0.12);color:#10B981;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            </div>
+            <h3>Tools Menu — Analyst Orbit's Toolkit</h3>
+          </div>
+          <ul class="feature-list">
+            <li><strong>Scratchpad</strong> — temporary q/Python playground</li>
+            <li><strong>Remote Scratchpad</strong> — run code against a remote kdb+ process</li>
+            <li><strong>Visual Inspector</strong> — view tables/results as readable visuals</li>
+            <li><strong>Visual Profiler</strong> — visual performance breakdown</li>
+            <li><strong>Table Importer / Exporter</strong> — bring data in/out (CSV, JSON, ODBC)</li>
+            <li><strong>Table Transformer</strong> — point-and-click ETL</li>
+          </ul>
+        </div>
+        <div class="feature-col">
+          <div class="feature-col-header">
+            <div class="feature-col-icon" style="background:rgba(245,158,11,0.12);color:#F59E0B;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 1 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <h3>Help Menu — Learn As You Go</h3>
+          </div>
+          <ul class="feature-list">
+            <li><strong>Feature Overview</strong> — product tour</li>
+            <li><strong>Keyboard Reference</strong> — shortcut cheat sheet</li>
+            <li><strong>Q Reference</strong> — full q language docs</li>
+            <li><strong>Analyst Orbit Function Reference</strong> — Analyst's own library docs</li>
+            <li><strong>Analyst Orbit User Guide</strong> — full how-to guide</li>
+            <li><strong>Notes &amp; Troubleshooting</strong> — known issues, fixes</li>
+          </ul>
+        </div>
+      </div>
+      <button class="slide-attach-btn" title="Attach screenshot to this slide">📷 Attach Slide Screenshot</button>
+      <div class="slide-image-container" style="display:none;">
+        <div class="slide-image-frame">
+          <div class="slide-image-placeholder">Click or drop image for Slide 9</div>
+        </div>
+        <button class="remove-slide-image-btn">✕ Remove</button>
+      </div>
+    </div>
+
+    <!-- ========== SLIDE 9 — Demo / Screenshots ========== -->
+    <div class="slide" data-slide-id="slide-10">
+      <h2 class="slide-headline">See It In Action</h2>
+      <div class="screenshots-grid">
+        <div class="screenshot-card">
+          <div class="screenshot-frame" data-index="0">
+            <div class="screenshot-placeholder">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span style="font-size:0.75rem;">Click or drop an image</span>
+            </div>
+          </div>
+          <div class="screenshot-caption">Workspace &amp; Editor view</div>
+        </div>
+        <div class="screenshot-card">
+          <div class="screenshot-frame" data-index="1">
+            <div class="screenshot-placeholder">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span style="font-size:0.75rem;">Click or drop an image</span>
+            </div>
+          </div>
+          <div class="screenshot-caption">Data transform / query in progress</div>
+        </div>
+        <div class="screenshot-card">
+          <div class="screenshot-frame" data-index="2">
+            <div class="screenshot-placeholder">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span style="font-size:0.75rem;">Click or drop an image</span>
+            </div>
+          </div>
+          <div class="screenshot-caption">Visual output</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== SLIDE 10 — Value Add / Impact ========== -->
+    <div class="slide" data-slide-id="slide-11">
+      <h2 class="slide-headline">Why It Matters</h2>
+      <div class="value-cards">
+        <!-- Analytics -->
+        <div class="value-card">
+          <div class="value-icon speed">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div class="value-number">Real-Time + Historical Analytics</div>
+          <div class="value-label">Built directly on kdb+ — query massive time-series datasets, live or historical, without leaving the browser</div>
+        </div>
+        <!-- Accessibility -->
+        <div class="value-card">
+          <div class="value-icon access">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="value-number">Fewer Bottlenecks</div>
+          <div class="value-label">Business/analyst users can build views themselves, without waiting on engineering</div>
+        </div>
+        <!-- Quality -->
+        <div class="value-card">
+          <div class="value-icon quality">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div class="value-number">Built-in Testing</div>
+          <div class="value-label">QCumber runs automated tests as part of the normal workflow, catching issues earlier</div>
+        </div>
+        <!-- Collaboration -->
+        <div class="value-card">
+          <div class="value-icon adoption">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><line x1="1.05" y1="12" x2="7" y2="12"/><line x1="17.01" y1="12" x2="22.96" y2="12"/></svg>
+          </div>
+          <div class="value-number">Git-Integrated Workflow</div>
+          <div class="value-label">Version control, review, and collaboration built into the same workspace — no separate tooling needed</div>
+        </div>
+      </div>
+      <button class="slide-attach-btn" title="Attach screenshot to this slide">📷 Attach Slide Screenshot</button>
+      <div class="slide-image-container" style="display:none;">
+        <div class="slide-image-frame">
+          <div class="slide-image-placeholder">Click or drop image for Slide 11</div>
+        </div>
+        <button class="remove-slide-image-btn">✕ Remove</button>
+      </div>
+    </div>
+
+    <!-- ========== SLIDE 11 — Tickets Resolved: Sasmita Rout ========== -->
+    <div class="slide" data-slide-id="slide-12">
+      <h2 class="slide-headline">Tickets Resolved — <span class="presenter-name-tag">Sasmita Rout</span></h2>
+      <div class="tickets-grid">
+        <div class="ticket-card">
+          <div class="ticket-card-header">
+            <div class="ticket-id-title">
+              <span class="ticket-id-badge">KXI-1206</span>
+              <span class="ticket-title">Handle File Paths Containing Spaces</span>
+            </div>
+            <div style="display:flex;gap:6px;align-items:center;">
+              <span class="priority-badge medium">🟡 Medium</span>
+              <span class="ticket-status-badge resolved">✅ Resolved &amp; Approved</span>
+            </div>
+          </div>
+          <div class="ticket-date-line">Jun 9 – Jun 15</div>
+          <ul class="ticket-list">
+            <li>Test and source file paths containing spaces previously broke the tooling</li>
+            <li>Fixed path handling so spaces no longer cause failures</li>
+          </ul>
+        </div>
+
+        <div class="ticket-card">
+          <div class="ticket-card-header">
+            <div class="ticket-id-title">
+              <span class="ticket-id-badge">KXP-1239</span>
+              <span class="ticket-title">Support Multiple Test Paths (axqcumber)</span>
+            </div>
+            <div style="display:flex;gap:6px;align-items:center;">
+              <span class="priority-badge medium-high">🟠 Medium-High</span>
+              <span class="ticket-status-badge resolved">✅ Resolved &amp; Approved</span>
+            </div>
+          </div>
+          <div class="ticket-date-line">Jun 16 – Jul 8</div>
+          <ul class="ticket-list">
+            <li>Coverage analysis previously ran on only one file at a time — limiting for larger projects</li>
+            <li>Extended framework to support multiple test files in a single coverage run</li>
+          </ul>
+        </div>
+
+        <div class="ticket-card">
+          <div class="ticket-card-header">
+            <div class="ticket-id-title">
+              <span class="ticket-id-badge">KXP-1207</span>
+              <span class="ticket-title">Fix Coverage Instrumentation for Anonymous Functions Inside Named Functions (axcoverage)</span>
+            </div>
+            <div style="display:flex;gap:6px;align-items:center;">
+              <span class="priority-badge high">🔴 High</span>
+              <span class="ticket-status-badge resolved">✅ Resolved &amp; Approved</span>
+            </div>
+          </div>
+          <div class="ticket-date-line">Jul 1 – Jul 3 · found independently while working on KXP-1239</div>
+          <ul class="ticket-list">
+            <li>Long-standing, previously unnoticed bug in the coverage library</li>
+            <li>Not part of the original ticket — discovered and fixed proactively</li>
+          </ul>
+        </div>
+
+        <div class="ticket-card">
+          <div class="ticket-card-header">
+            <div class="ticket-id-title">
+              <span class="ticket-id-badge">KXI-52035</span>
+              <span class="ticket-title">Errors in the qdate Library (axqdate)</span>
+            </div>
+            <div style="display:flex;gap:6px;align-items:center;">
+              <span class="priority-badge low">🟢 Low</span>
+              <span class="ticket-status-badge resolved">✅ Resolved &amp; Approved</span>
+            </div>
+          </div>
+          <div class="ticket-date-line">Jul 8 – Jul 15</div>
+          <ul class="ticket-list">
+            <li>Users hit unexpected errors with time-based date patterns</li>
+            <li>Traced root cause to a missing safety check from a 2020 code change; added regression tests</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="ticket-highlight-strip">
+        📊 <strong>4 tickets resolved &amp; approved</strong>, June 9 – Jul 15 · Found and fixed a hidden bug (KXP-1207) while working on a separate ticket
+        <br><em style="color:#9CA3AF;">"Sasmita is picking up well" — Benjamin Jeffery, Senior Developer (via Kamala P.)</em>
+      </div>
+      <button class="slide-attach-btn" title="Attach screenshot to this slide">📷 Attach Slide Screenshot</button>
+      <div class="slide-image-container" style="display:none;">
+        <div class="slide-image-frame">
+          <div class="slide-image-placeholder">Click or drop image for Slide 12</div>
+        </div>
+        <button class="remove-slide-image-btn">✕ Remove</button>
+      </div>
+    </div>
+
+    <!-- ========== SLIDE 12 — Repository Synchronization (Sasmita's work) ========== -->
+    <div class="slide" data-slide-id="slide-13">
+      <h2 class="slide-headline">Repository Synchronization — <span class="presenter-name-tag">Sasmita Rout</span></h2>
+      <p class="ticket-date-line" style="text-align:center;margin-bottom:6px;">Jul 17 – Aug 12</p>
+      <div class="reposync-hero">
+        <div class="reposync-stat">50+</div>
+        <div class="reposync-stat-label">Repositories Synchronized</div>
+      </div>
+      <ul class="reposync-list">
+        <li>Compared <code>main</code> and the release branch to identify commits missing from the release</li>
+        <li>Created synchronization branches, cherry-picked required commits while preserving commit sequence</li>
+        <li>Handled merge commits, empty cherry-picks, and merge conflicts where required</li>
+        <li><strong>Wrote an automated script to handle cherry-picking for changesets with more than 100 changes</strong> — cutting down manual work on the largest, most error-prone syncs</li>
+        <li><strong>20+ repositories sanity-tested afterward</strong> to confirm the sync actually took effect</li>
+        <li>Created Merge Requests for review</li>
+      </ul>
+      <p style="text-align:center;font-size:0.75rem;color:#9CA3AF;margin-top:10px;">📊 50+ repos synced · 20+ sanity-tested · Jul 17 – Aug 12</p>
+      <div class="skills-section">
+        <div class="skills-section-label">📚 SKILLS PICKED UP ALONG THE WAY</div>
+        <div class="skills-badge-row">
+          <span class="skill-badge">🐧 Linux</span>
+          <span class="skill-badge">🔧 Git (Advanced Workflows)</span>
+          <span class="skill-badge">🤖 Claude Code</span>
+        </div>
+      </div>
+      <button class="slide-attach-btn" title="Attach screenshot to this slide">📷 Attach Slide Screenshot</button>
+      <div class="slide-image-container" style="display:none;">
+        <div class="slide-image-frame">
+          <div class="slide-image-placeholder">Click or drop image for Slide 13</div>
+        </div>
+        <button class="remove-slide-image-btn">✕ Remove</button>
+      </div>
+    </div>
+
+    <!-- ========== SLIDE 13 — Tickets Resolved: Sharan Sanamani ========== -->
+    <div class="slide" data-slide-id="slide-14">
+      <h2 class="slide-headline">Tickets Resolved — <span class="presenter-name-tag">Sharan Sanamani</span></h2>
+      <div class="tickets-grid">
+        <div class="ticket-card">
+          <div class="ticket-card-header">
+            <div class="ticket-id-title">
+              <span class="ticket-id-badge">KXP-1206</span>
+              <span class="ticket-title">Validate &amp; Error on Spaces in Test/Source Paths</span>
+            </div>
+            <div style="display:flex;gap:6px;align-items:center;">
+              <span class="priority-badge medium">🟡 Medium</span>
+              <span class="ticket-status-badge resolved">✅ Resolved &amp; Approved</span>
+            </div>
+          </div>
+          <div class="ticket-date-line">Jun 18 – Jun 22</div>
+          <ul class="ticket-list">
+            <li>Added validation that raises a clear error when test or source paths contain spaces</li>
+          </ul>
+        </div>
+
+        <div class="ticket-card">
+          <div class="ticket-card-header">
+            <div class="ticket-id-title">
+              <span class="ticket-id-badge">KXP-7600</span>
+              <span class="ticket-title">QCumber Console Width Configuration</span>
+            </div>
+            <div style="display:flex;gap:6px;align-items:center;">
+              <span class="priority-badge low-medium">🟢 Low-Medium</span>
+              <span class="ticket-status-badge resolved">✅ Resolved &amp; Approved</span>
+            </div>
+          </div>
+          <div class="ticket-date-line">Jun 25 – Jul 10</div>
+          <ul class="ticket-list">
+            <li>Added a <code>-console</code> command-line argument, bumped default console width to 250</li>
+          </ul>
+        </div>
+
+        <div class="ticket-card">
+          <div class="ticket-card-header">
+            <div class="ticket-id-title">
+              <span class="ticket-id-badge">CI Config</span>
+              <span class="ticket-title">CI Config for Docs Build (release/5.1.0)</span>
+            </div>
+            <div style="display:flex;gap:6px;align-items:center;">
+              <span class="priority-badge medium">🟠 Medium</span>
+              <span class="ticket-status-badge resolved">✅ Resolved &amp; Approved</span>
+            </div>
+          </div>
+          <div class="ticket-date-line">Jul 17 – Aug 3</div>
+          <ul class="ticket-list">
+            <li>Added CI configuration to build documentation on the release/5.1.0 branch</li>
+          </ul>
+        </div>
+
+        <div class="ticket-card">
+          <div class="ticket-card-header">
+            <div class="ticket-id-title">
+              <span class="ticket-id-badge">Build Repo</span>
+              <span class="ticket-title">Local Build Research</span>
+            </div>
+            <div style="display:flex;gap:6px;align-items:center;">
+              <span class="priority-badge low">🟢 Low (exploratory)</span>
+              <span class="ticket-status-badge paused">⏸ Paused</span>
+            </div>
+          </div>
+          <div class="ticket-date-line">Aug 4 – Aug 7</div>
+          <ul class="ticket-list">
+            <li>Investigated running the Analyst Orbit build repo locally instead of on AWS, to cut costs</li>
+            <li>Found the real blocker: <code>ax-libraries-cache</code> has no compiled binaries for Ubuntu 22/24, despite <code>targets.js</code> claiming support</li>
+            <li>Paused pending a decision — not abandoned, just correctly stopped before wasting more time</li>
+          </ul>
+        </div>
+
+        <div class="ticket-card">
+          <div class="ticket-card-header">
+            <div class="ticket-id-title">
+              <span class="ticket-id-badge">KXP-5283</span>
+              <span class="ticket-title">Fix .axpnull.arity Incorrect Results</span>
+            </div>
+            <div style="display:flex;gap:6px;align-items:center;">
+              <span class="priority-badge high">🔴 High</span>
+              <span class="ticket-status-badge open">🔶 MR Open</span>
+            </div>
+          </div>
+          <div class="ticket-date-line">Aug 11 – Aug 12</div>
+          <ul class="ticket-list">
+            <li>Fixed <code>.axpnull.arity</code> returning incorrect results (e.g. <code>-2</code> instead of <code>2</code>) for a projection of a composition</li>
+            <li>Root cause: the projection branch assumed the underlying function was always a plain lambda</li>
+            <li>Added dedicated test file covering lambdas, primitives, projections, compositions, and projections of compositions</li>
+            <li>MR !33 open into main</li>
+          </ul>
+        </div>
+      </div>
+      <div class="ticket-highlight-strip">
+        📊 <strong>4 tickets resolved &amp; approved</strong>, 1 MR open, 1 paused pending direction — honest status across validation, tooling, docs, infrastructure, and a correctness bug fix
+      </div>
+      <div class="skills-section">
+        <div class="skills-section-label">📚 SKILLS PICKED UP ALONG THE WAY</div>
+        <div class="skills-badge-row">
+          <span class="skill-badge">✅ Linux Course</span>
+          <span class="skill-badge">✅ Claude Code 101</span>
+          <span class="skill-badge">✅ Claude Code Cowork</span>
+          <span class="skill-badge in-progress">🔄 Claude Code Agent Skills (50%)</span>
+        </div>
+      </div>
+      <button class="slide-attach-btn" title="Attach screenshot to this slide">📷 Attach Slide Screenshot</button>
+      <div class="slide-image-container" style="display:none;">
+        <div class="slide-image-frame">
+          <div class="slide-image-placeholder">Click or drop image for Slide 14</div>
+        </div>
+        <button class="remove-slide-image-btn">✕ Remove</button>
+      </div>
+    </div>
+
+    <!-- ========== SLIDE 14 — Thank You & Q&A ========== -->
+    <div class="slide qa-slide" data-slide-id="slide-15">
+      <div class="title-glow"></div>
+      <h1 class="qa-title">Thank You</h1>
+      <p class="qa-sub">Questions?</p>
+      <button class="slide-attach-btn" title="Attach screenshot to this slide">📷 Attach Slide Screenshot</button>
+      <div class="slide-image-container" style="display:none;">
+        <div class="slide-image-frame">
+          <div class="slide-image-placeholder">Click or drop image for Slide 15</div>
+        </div>
+        <button class="remove-slide-image-btn">✕ Remove</button>
+      </div>
+    </div>
+
+  </div><!-- /.presentation -->
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <div class="nav-controls">
+    <button class="nav-btn" id="prev-btn" title="Previous slide (←)">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <span class="slide-counter" id="slide-counter">1 / 15</span>
+    <button class="nav-btn" id="next-btn" title="Next slide (→)">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <button class="nav-btn" id="fullscreen-btn" title="Presentation mode (F)">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+    </button>
+  </div>
+
+  <!-- Progress Bar -->
+  <div class="progress-bar" id="progress-bar"></div>
+
+  <!-- ==================== SIDEBAR ==================== -->
+  <button class="sidebar-toggle" id="sidebar-toggle" title="Speaker notes & editor">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+  </button>
+
+  <aside class="sidebar" id="sidebar">
+    <h2>Presenter Panel</h2>
+
+    <div class="sidebar-section">
+      <h3>Speaker Notes</h3>
+      <div class="sidebar-notes" id="speaker-notes">
+        20 sec. Just set the stage — no content yet.
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <h3>Interactive Tools Guide</h3>
+      <div style="font-size:0.75rem;color:#9CA3AF;line-height:1.6;">
+        Click any tool badge in the slides to open a deep-dive modal with full explanation and dedicated screenshot attachment slot.
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <h3>Keyboard Shortcuts</h3>
+      <div style="font-size:0.75rem;color:#6B7280;line-height:1.8;">
+        <div><kbd style="background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;color:#9CA3AF;font-size:0.7rem;">←</kbd> / <kbd style="background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;color:#9CA3AF;font-size:0.7rem;">→</kbd> Navigate slides</div>
+        <div><kbd style="background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;color:#9CA3AF;font-size:0.7rem;">Space</kbd> Next slide</div>
+        <div><kbd style="background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;color:#9CA3AF;font-size:0.7rem;">F</kbd> / <kbd style="background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;color:#9CA3AF;font-size:0.7rem;">P</kbd> Presentation mode</div>
+        <div><kbd style="background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:4px;color:#9CA3AF;font-size:0.7rem;">Esc</kbd> Exit fullscreen / Close modal</div>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <h3>Tips</h3>
+      <div style="font-size:0.75rem;color:#6B7280;line-height:1.7;">
+        <p>• Click any <span style="color:#00E5FF;">cyan-bordered text</span> on slides to edit placeholders.</p>
+        <p style="margin-top:6px;">• Click 📷 on any slide to attach a custom diagram or screenshot.</p>
+        <p style="margin-top:6px;">• Click any tool tag (Editor, Inspector, Git, etc.) to view its detail modal.</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==================== TOOL DETAIL MODAL ==================== -->
+  <div class="tool-modal-backdrop" id="tool-modal">
+    <div class="tool-modal-content">
+      <button class="tool-modal-close" id="modal-close-btn">✕</button>
+      <div class="tool-modal-header">
+        <div class="tool-modal-icon" id="modal-tool-icon">🛠️</div>
+        <div>
+          <span class="tool-modal-badge" id="modal-tool-badge">Developer Tool</span>
+          <h2 class="tool-modal-title" id="modal-tool-name">Tool Name</h2>
+        </div>
+      </div>
+      <div class="tool-modal-body">
+        <div class="modal-section">
+          <h4>💡 What It Is &amp; How It Works</h4>
+          <p id="modal-tool-desc">Tool detailed description goes here...</p>
+        </div>
+        <div class="modal-section">
+          <h4>🎬 See It In Action</h4>
+          <div class="toolanim-stage" id="modal-tool-anim-stage"></div>
+          <button class="toolanim-replay-btn" id="modal-tool-anim-replay">↻ Replay Animation</button>
+        </div>
+        <div class="modal-section">
+          <h4>🎯 Who Benefits &amp; Business Value</h4>
+          <p id="modal-tool-value">Business value detailed text...</p>
+        </div>
+        <div class="modal-section">
+          <h4>🖼️ Attach Tool Screenshot / Demonstration</h4>
+          <div class="tool-screenshot-frame" id="modal-tool-screenshot-frame">
+            <div class="tool-screenshot-placeholder" id="modal-tool-screenshot-ph">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span style="font-size:0.75rem;margin-top:6px;">Click or drag &amp; drop screenshot for this tool</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
